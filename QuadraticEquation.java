@@ -37,13 +37,13 @@ public class QuadraticEquation {
 
 
     public double tinhDelta() {
-        double delta = ((Math.pow(b, 2)) - 4 * a * c);
+        double delta = ((Math.pow(this.b, 2)) - 4 * this.a * this.c);
         return delta;
     }
 
 
     public double getRoot1() {
-        x1 = ((-b + Math.sqrt(delta)) / (2 * a));
+        x1 = (-this.b + Math.sqrt(delta)) / (2 * this.a);
         System.out.println("x1= " + x1);
 
         return x1;
@@ -51,13 +51,13 @@ public class QuadraticEquation {
     }
 
     public double getRoot2() {
-        x2 = ((-b - Math.sqrt(delta)) / (2 * a));
+        x2 = (-this.b - Math.sqrt(delta)) / (2 * this.a);
         System.out.println("x2= " + x2);
         return x2;
     }
 
     public double nghiemkep() {
-        x1 = -b / (2 * a);
+        x1 = -this.b / (2 * this.a);
         return x1;
     }
 
@@ -76,23 +76,14 @@ public class QuadraticEquation {
 
     public void checkDk() {
         double delta = tinhDelta();
-        System.out.println("delta"+delta);
+        System.out.println("delta" + delta);
         if (delta > 0) {
             System.out.println("Co 2 nghiem " + getRoot1() + getRoot2());
 
-        } else if(delta == 0){
+        } else if (delta == 0) {
             System.out.println("PT co 1 nghiem kep: " + nghiemkep());
-        } else{
+        } else {
             System.out.println("PT vo nghiem");
         }
     }
-
-
-    public static void main(String[] args) {
-        QuadraticEquation ptb2 = new QuadraticEquation();
-        ptb2.nhap();
-        ptb2.checkDk();
-
-    }
-
 }
